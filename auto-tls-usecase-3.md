@@ -16,10 +16,11 @@ mkdir /opt/cloudera/AutoTLS
 chown cloudera-scm:cloudera-scm /opt/cloudera/AutoTLS
 
 # Run curl cmd for Auto-TLS Use Case 3:
+```
 https://github.com/bhagadepravin/commands/blob/master/cm.md#auto-tls-using-existing-certificate-use-case-3
 
-service cloudera-scm-server restart
-```
+`service cloudera-scm-server restart`
+
 
 #### Change values of above property:
 Rerun the curl cmd with different location.
