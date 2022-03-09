@@ -10,7 +10,7 @@ Grab the scripts:
 cd
 rm -rf ~/internal-ca
 git clone git@github.com:bhagadepravin/internal-ca.git
-cd ~/internal-ca/scripts
+cd ~/internal-ca
 chmod +x *.sh
 ```
 
