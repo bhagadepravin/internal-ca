@@ -79,8 +79,8 @@ emailAddress                    = Email Address
 
 # Optionally, specify some defaults.
 countryName_default             = US
-stateOrProvinceName_default     = PA
-localityName_default            = LA
+stateOrProvinceName_default     = LA
+localityName_default            = PA
 0.organizationName_default      = SUPPORT
 organizationalUnitName_default  =
 emailAddress_default            =
