@@ -6,11 +6,11 @@ sudo rm -rf /root/ca
 ```
 Grab the scripts:
 
-```
+```bash
 cd
-sudo rm -rf ~/my-simple-bash-ca
-git clone https://github.com/arlotito/my-simple-bash-ca
-cd ~/my-simple-bash-ca/scripts
+rm -rf ~/internal-ca
+git clone git@github.com:bhagadepravin/internal-ca.git
+cd ~/internal-ca/scripts
 chmod +x *.sh
 ```
 
@@ -18,8 +18,8 @@ Customize ./scripts/*.openssl.cnf files as needed or keep default values.
 
 You can now create your certs. As an example, to create certs as per the diagram above:
 
-```
-cd ~/my-simple-bash-ca/scripts
+```bash
+cd ~/internal-ca
 sudo ./create_root.sh
 
 sudo ./create_int.sh intermediate
@@ -32,7 +32,7 @@ export certs
 
 ## All the certificates are stored in /root/ca. To export them into a given folder:
 
-```
+```bash
 Usage: ./export.sh -i <intermediate-name> -c <certificate-name> -d <dest-folder> [-k] [-h]
   -h  Display help
   -i  name of the intermediate  
@@ -44,28 +44,32 @@ Usage: ./export.sh -i <intermediate-name> -c <certificate-name> -d <dest-folder>
 
 Examples:
 
-  to extract the intermediate "int1" (including private key) into ~/exported:
-    ./export.sh -i int1 -c intermediate -d ~/exported -k
+  to extract the intermediate "intermediate" (including private key) into ~/exported:
+    ./export.sh -i intermediate -c intermediate -d ~/exported -k
 
-  to extract the server "est.contoso.com" (including private key) into ~/exported:
-    ./export.sh -i int1 -c est.contoso.com -d ~/exported -k
+  to extract the server "c474-node1.coelab.cloudera.com" (including private key) into ~/exported:
+    ./export.sh -i intermediate -c c474-node1.coelab.cloudera.com -d ~/exported -k
 
   to extract the client "device3" (including private key) into ~/exported:
-    ./export.sh -i int1 -c device3 -d ~/exported -k
+    ./export.sh -i intermediate -c device3 -d ~/exported -k
 
 ```
 
 ## View and verify certs
 To optionally view the ROOT certificate:
 
-```
+```bash
 sudo openssl x509 -noout -in /root/ca/certs/ca.cert.pem -noout -subject -issuer
+```
 To view the INTERMEDIATE certificates:
 
+```bash
 # NOTE: replace `<INTERMEDIATE>` with the intermediate name
-sudo openssl x509 -noout -in <INTERMEDIATE>/certs/intermediate.cert.pem -noout -subject -issuer
-To verify INTERMEDIATE against ROOT:
 
+sudo openssl x509 -noout -in <INTERMEDIATE>/certs/intermediate.cert.pem -noout -subject -issuer
+```bash
+To verify INTERMEDIATE against ROOT:
+```
 # NOTE: replace `<INTERMEDIATE>` with the intermediate name
 sudo openssl verify -CAfile /root/CA/certs/ca.cert.pem /root/CA/<INTERMEDIATE>/certs/intermediate.cert.pem
 ```
