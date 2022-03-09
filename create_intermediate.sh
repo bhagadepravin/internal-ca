@@ -26,13 +26,13 @@ echo 1000 > /root/ca/$DIR/crlnumber
 
 # create key
 cd /root/ca
-openssl genrsa \
+openssl genrsa  -passout pass:Welcome \
     -out $DIR/private/intermediate.key.pem 4096
 chmod 400 $DIR/private/intermediate.key.pem
 
 # create csr
 cd /root/ca
-openssl req -config $DIR/openssl.cnf -new -sha256 \
+openssl req -config $DIR/openssl.cnf -new -sha256  -passout pass:Welcome \
       -key $DIR/private/intermediate.key.pem \
       -out $DIR/csr/intermediate.csr.pem
 
