@@ -67,9 +67,10 @@ To view the INTERMEDIATE certificates:
 # NOTE: replace `<INTERMEDIATE>` with the intermediate name
 
 sudo openssl x509 -noout -in <INTERMEDIATE>/certs/intermediate.cert.pem -noout -subject -issuer
-```bash
-To verify INTERMEDIATE against ROOT:
 ```
+
+To verify INTERMEDIATE against ROOT:
+```bash
 # NOTE: replace `<INTERMEDIATE>` with the intermediate name
 sudo openssl verify -CAfile /root/CA/certs/ca.cert.pem /root/CA/<INTERMEDIATE>/certs/intermediate.cert.pem
 ```
