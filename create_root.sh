@@ -9,8 +9,8 @@ mkdir -p /root/ca
 
 
 cd /root/ca
-yum install wget -y -q
-wget https://raw.githubusercontent.com/bhagadepravin/commands/master/internal-ca/scripts/openssl.cnf
+#yum install wget -y -q
+#wget https://raw.githubusercontent.com/bhagadepravin/commands/master/internal-ca/scripts/openssl.cnf
 mkdir -p certs crl newcerts private
 
 chmod 700 private
