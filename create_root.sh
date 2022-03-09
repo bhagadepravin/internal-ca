@@ -21,13 +21,13 @@ echo 1000 > serial
 cd /root/ca
 echo "Password:Welcome"
 echo ""
-openssl genrsa -aes256 -passout pass:Welcome -out private/ca.key.pem 4096
+openssl genrsa -aes256 -out private/ca.key.pem 4096
 chmod 400 private/ca.key.pem
 
 # create root cert
 cd /root/ca
 
-openssl req -config openssl.cnf -passout pass:Welcome \
+openssl req -config openssl.cnf \
     -key private/ca.key.pem \
     -new -x509 -days 7300 -sha256 -extensions v3_ca \
     -out certs/ca.cert.pem
