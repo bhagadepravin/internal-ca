@@ -11,7 +11,7 @@ mkdir -p /root/ca
 cd /root/ca
 
 mkdir -p certs crl newcerts private
-ls -ltr /root/ca/*
+cp openssl.cnf /root/ca/
 
 chmod 700 private
 touch index.txt
