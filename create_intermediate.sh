@@ -12,7 +12,7 @@ DIR=$1
 export DEST_DIR=/root/ca/$1
 
 mkdir -p /root/ca/$DIR
-cp intermediate.openssl.cnf /root/ca/$DIR/openssl.cnf
+cp ~/internal-ca/intermediate.openssl.cnf /root/ca/$DIR/openssl.cnf
 
 cd /root/ca/$DIR
 mkdir -p certs crl csr newcerts private
