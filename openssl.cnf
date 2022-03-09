@@ -114,7 +114,8 @@ authorityKeyIdentifier = keyid,issuer:always
 keyUsage = critical, digitalSignature, keyEncipherment
 extendedKeyUsage = serverAuth, clientAuth
 #subjectAltName=DNS:hostname
-subjectAltName=DNS:*.coelab.cloudera.com, DNS:c474-node1.coelab.cloudera.com, DNS:c474-node2.coelab.cloudera.com, DNS:c474-node3.coelab.cloudera.com, DNS:c474-node4.coelab.cloudera.com
+#subjectAltName=DNS:*.coelab.cloudera.com, DNS:c474-node1.coelab.cloudera.com, DNS:c474-node2.coelab.cloudera.com, DNS:c474-node3.coelab.cloudera.com, DNS:c474-node4.coelab.cloudera.com
+#subjectAltName=DNS:*.root.hwx.site, DNS:praveen717-1.praveen717.root.hwx.site, DNS:praveen717-2.praveen717.root.hwx.site, DNS:praveen717-2.praveen717.root.hwx.site
 
 [ crl_ext ]
 # Extension for CRLs (`man x509v3_config`).
