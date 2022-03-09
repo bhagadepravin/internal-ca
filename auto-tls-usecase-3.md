@@ -20,3 +20,18 @@ https://github.com/bhagadepravin/commands/blob/master/cm.md#auto-tls-using-exist
 
 service cloudera-scm-server restart
 ```
+
+#### Change values of above property:
+Rerun the curl cmd with different location.
+
+##### Disable auto-tls for troubleshooting
+```
+# mysql
+mysql 
+use cm;
+select * from CONFIGS where attr like '%tls%';
+update CONFIGS set value = 'false' where attr = 'web_tls';
+update CONFIGS set value = 'false' where attr = 'agent_tls';
+quit
+service cloudera-scm-server restart
+```
