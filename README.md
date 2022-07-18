@@ -9,7 +9,7 @@ Grab the scripts:
 ```bash
 cd
 rm -rf ~/internal-ca
-git clone git@github.com:bhagadepravin/internal-ca.git
+git clone https://github.com/bhagadepravin/internal-ca.git
 cd ~/internal-ca
 chmod +x *.sh
 ```
