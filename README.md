@@ -22,10 +22,10 @@ You can now create your certs. As an example, to create certs as per the diagram
 cd ~/internal-ca
 sudo ./create_root.sh
 
-sudo ./create_int.sh intermediate
+sudo ./create_intermediate.sh intermediate
 sudo ./create_server.sh intermediate c474-node1.coelab.cloudera.com
 
-sudo ./create_int.sh int3  
+sudo ./create_intermediate.sh int3  
 sudo ./create_client.sh int3 deviceA  
 export certs
 ```
