@@ -14,7 +14,7 @@ cd ~/internal-ca
 chmod +x *.sh
 ```
 
-Customize ./scripts/*.openssl.cnf files as needed or keep default values.
+Customize **openssl.cnf** files as needed or keep default values.
 
 You can now create your certs. As an example, to create certs as per the diagram above:
 
